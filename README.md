@@ -42,6 +42,19 @@ Users should be able to:
 ## My process
 
 - Install React+Vite, Prepare assets, Initial git
+- Identify components (These components may change during creation)
+  - Layout
+    - Wrapper
+  - Header
+  - Menu
+  - Cart
+  - Product (page)
+  - Slider (fade)
+  - ProductSlider
+  - Modal
+  - Backdrop
+  - LightBox (with slider capability)
+  - ProductLightBox
 
 ### Built with
 
