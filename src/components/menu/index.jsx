@@ -1,8 +1,17 @@
 
 
 const Menu = () => {
+
+    const items = ["Collections", "Men", "WomenAbout", "Contact"];
+
     return <nav>
-        menu goes here
+        <ul>
+            {items.map((item, index) => {
+                return <li key={index}>
+                    {item}
+                </li>
+            })}
+        </ul>
     </nav>
 }
 

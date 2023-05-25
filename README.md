@@ -55,6 +55,7 @@ Users should be able to:
   - Backdrop
   - LightBox (with slider capability)
   - ProductLightBox
+- Create components
 
 ### Built with
 

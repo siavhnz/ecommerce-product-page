@@ -1,10 +1,11 @@
 import { useState } from 'react'
+import Product from './pages/Product'
 
 function App() {
 
   return (
     <>
-      E-Commerce Product Page
+      <Product />
     </>
   )
 }
