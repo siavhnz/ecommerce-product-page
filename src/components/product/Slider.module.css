@@ -1,0 +1,9 @@
+
+
+@media (min-width: 30em) { /* 480px */
+    .slider-container {
+        max-width: 27.875rem; /* 446px */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

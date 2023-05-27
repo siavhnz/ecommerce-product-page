@@ -1,0 +1,99 @@
+.article {
+    padding: 1.375rem 1.5rem;
+}
+
+.company {
+    font-family: var(--font);
+    text-transform: uppercase;
+    color: var(--color-orange);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+.title {
+    font-family: var(--font);
+    color: var(--color-very-dark-blue);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 2rem;
+    margin-top: 0.5em;
+}
+
+.desc {
+    font-family: var(--font);
+    color: var(--color-dark-grayish-blue);
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    line-height: 1.55rem;
+}
+
+.price {
+    display: flex;
+    margin-top: 1.375rem;
+    letter-spacing: 0.07rem;
+}
+
+.active-price {
+    display: flex;
+    align-items: center;
+}
+
+.active-price > span:first-of-type {
+    font-family: var(--font);
+    color: var(--color-very-dark-blue);
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.active-price > span:nth-of-type(2) {
+    font-family: var(--font);
+    color: var(--color-orange);
+    background-color: var(--color-pale-orange);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-left: 1rem;
+}
+
+.inactive-price {
+    font-family: var(--font);
+    margin-left: auto;
+    text-decoration: line-through;
+    margin-top: 0.5rem;
+    color: var(--color-grayish-blue);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.actions {
+    margin-top: 1.25rem;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    color: var(--color-very-dark-blue);
+    background-color: var(--color-light-grayish-blue);
+    font-family: var(--font);
+    font-weight: 700;
+    padding: 1rem 1.5rem;
+}
+
+.add-to-cart {
+    margin-top: 1rem;
+}
+
+.inner-add-to-cart {
+    display: flex;
+    column-gap: 0.8rem;
+    align-items: center;
+}
+
+.inner-add-to-cart svg {
+    width: 1.125rem;
+    height: 1.125rem;
+}

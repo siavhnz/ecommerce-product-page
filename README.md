@@ -56,6 +56,8 @@ Users should be able to:
   - LightBox (with slider capability)
   - ProductLightBox
 - Create components
+- Work on:
+  - Mobile design based on `design` folder [375px]
 
 ### Built with
 

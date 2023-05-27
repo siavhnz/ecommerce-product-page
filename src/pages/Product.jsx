@@ -1,51 +1,61 @@
 
 import Layout from "../components/layout";
-import ProductSlider from "../components/product/slider";
+import ProductSlider from "../components/product/Slider";
 import { products } from "../store/products"
-import { ReactComponent as Plus } from "../assets/images/icon-plus.svg";
-import { ReactComponent as Minus } from "../assets/images/icon-minus.svg";
 import { ReactComponent as Cart } from "../assets/images/icon-cart.svg";
-import Button from "../components/ui/button";
+import ActionButton from "../components/ui/button/ActionButton";
+import NumberInput from "../components/ui/input/NumberInput";
+import styles from "./Product.module.css";
+import { useContext, useRef, useState } from "react";
+import { CartContext } from "../store/contexts/cart";
 
 const Product = () => {
 
-    const product = products[0]
+    const cartCtx = useContext(CartContext);
+
+    const productCount = useRef(null);
+    const product = products[0];
+
+
+    const handleAddToCart = () => {
+
+        const count = +productCount.current.value;
+        if (count === 0) return;
+        const id = product.id;
+        const image = product.images[0].thumbnail;
+        const price = product.priceAfterDiscount;
+        const title = product.title;
+
+        cartCtx.addToCart({ id, image, price, title, count });
+    }
 
     return <Layout>
         <div>
             <ProductSlider product={product} />
-            <article>
-                <p>{product.company}</p>
-                <h1>{product.title}</h1>
-                <p>{product.description}</p>
-                <div>
-                    <div>
-                        <span>{product.priceAfterDiscount}</span>
+            <article className={styles.article}>
+                <p className={styles.company}>{product.company}</p>
+                <h1 className={styles.title}>{product.title}</h1>
+                <p className={styles.desc}>{product.description}</p>
+                <div className={styles.price}>
+                    <div className={styles["active-price"]}>
+                        <span>${Number.parseFloat(product.priceAfterDiscount).toFixed(2)}</span>
                         <span>{product.discount}</span>
                     </div>
-                    <span>{product.priceBeforDiscount}</span>
+                    <span className={styles["inactive-price"]}>${Number.parseFloat(product.priceBeforDiscount).toFixed(2)}</span>
                 </div>
-                <div>
-                    <div>
-                        <button aria-label="add 1 more to the basket">
-                            <Plus aria-hidden={true} focusable={false} />
-                        </button>
-                        <span>0</span>
-                        <button aria-label="remove 1 quantity from the basket">
-                            <Minus aria-hidden={true} focusable={false} />
-                        </button>
+                <div className={styles.actions}>
+                    <NumberInput min={0} ref={productCount} reset={cartCtx.message.for === "AddingProduct"} />
+                    <div className={styles["add-to-cart"]}>
+                        <ActionButton onClick={handleAddToCart}>
+                            <div className={styles["inner-add-to-cart"]}>
+                                <Cart aria-hidden={true} focusable={false} />
+                                <span>Add to cart</span>
+                            </div>
+                        </ActionButton>
                     </div>
-                    <Button>
-                        <div>
-                            <Cart aria-hidden={true} focusable={false} />
-                            <span>Add to cart</span>
-                        </div>
-                    </Button>
                 </div>
-
             </article>
         </div>
-
     </Layout>
 }
 

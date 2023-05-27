@@ -1,0 +1,19 @@
+.hambur {
+    order: -1;
+}
+
+.nav {
+    position:fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    min-width: 15.6rem;
+    height: 100%;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--color-white);
+    z-index: 2;
+}
+
+.close {
+    margin-bottom: 3.25rem;
+}

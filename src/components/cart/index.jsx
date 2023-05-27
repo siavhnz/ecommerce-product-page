@@ -1,17 +1,33 @@
-import Button from "../ui/button"
-import { ReactComponent as Delete } from "../assets/images/icon-delete.svg";
+
+import { motion } from "framer-motion";
+import ActionButton from "../ui/button/ActionButton"
+import { ReactComponent as Delete } from "../../assets/images/icon-delete.svg";
+import styles from "./index.module.css";
+import { useContext } from "react";
+import { CartContext } from "../../store/contexts/cart";
+
+const variants = {
+    hidden: {
+        opacity: 0,
+        y: -40
+    },
+    visible: {
+        opacity: 1,
+        y: 0
+    },
+    exit: {
+        opacity: 0,
+        y: -20
+    }
+}
 
 const Cart = () => {
 
-    const items = [
-        {
-            image: "/images/image-product-1-thumbnail.jpg",
-            title: "Fall limited edition sneakers",
-            price: 125,
-            count: 3,
-            total: 375.00,
-        }
-    ];
+    const cartCtx = useContext(CartContext);
+
+    const deleteItem = (id) => {
+        cartCtx.removeFromCart(id);
+    }
 
     const Header = <header>
         <h3>
@@ -19,44 +35,51 @@ const Cart = () => {
         </h3>
     </header>
 
-    if (items.length === 0) {
-        return <article>
+    if (cartCtx.count === 0) {
+        return <motion.article
+            initial="hidden" animate="visible" exit="exit" variants={variants}
+            className={styles.container}>
             {Header}
-            <p>Your cart is empty.</p>
-        </article>
+            <p className={styles.empty}>Your cart is empty.</p>
+        </motion.article>
     }
 
-    return <article>
+    return <motion.article
+        initial="hidden" animate="visible" exit="exit" variants={variants}
+        className={styles.container}>
 
         {Header}
         {
-            items.length > 0 && <div>
+            cartCtx.count > 0 && <div>
 
-                <ul>
+                <ul className={styles.items}>
                     {
-                        items.map((item, index) => {
-                            return <li key={index}>
+                        cartCtx.cart.map((item) => {
+                            return <li key={item.id} className={styles.item}>
                                 <img alt={item.title} src={item.image} />
-                                <div>
+                                <div className={styles.info}>
                                     <h2>{item.title}</h2>
-                                    <p>
-                                        <span>${item.price}x{item.count}</span>
-                                        <span>${item.total}</span>
+                                    <p className={styles.price}>
+                                        <span>${Number.parseFloat(item.price).toFixed(2)}</span>
+                                        <span>x</span>
+                                        <span>{item.count}</span>
+                                        <span className={styles.total}>${Number.parseFloat(item.total).toFixed(2)}</span>
                                     </p>
                                 </div>
-                                <button aria-label={`delete ${item.title} from basket`}>
+                                <button aria-label={`delete ${item.title} from basket`} className={styles.delete} onClick={() => deleteItem(item.id)}>
                                     <Delete aria-hidden={true} focusable={false} />
                                 </button>
                             </li>
                         })
                     }
                 </ul>
-                <Button>
+                <ActionButton>
                     Checkout
-                </Button>
+                </ActionButton>
             </div>
         }
-    </article>
+    </motion.article>
+
 }
 
 export default Cart;

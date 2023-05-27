@@ -1,4 +1,5 @@
 import SelectiveSlider from "../slider/SelectiveSlider";
+import styles from "./Slider.module.css";
 
 
 const ProductSlider = ({ product }) => {
@@ -14,7 +15,9 @@ const ProductSlider = ({ product }) => {
         return item.image
     })
 
-    return <SelectiveSlider thumbnails={thumbnails} images={images} hasControl={false} />
+    return <div className={styles["slider-container"]}>
+            <SelectiveSlider thumbnails={thumbnails} images={images} hasControl={true} />
+        </div>
 }
 
 export default ProductSlider;

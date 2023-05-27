@@ -4,12 +4,10 @@ import Wrapper from "./Wrapper"
 
 const Layout = ({ children }) => {
     return <>
-        <Wrapper>
-            <Header />
-            <main>
-                {children}
-            </main>
-        </Wrapper>
+        <Header />
+        <main>
+            {children}
+        </main>
     </>
 }
 
