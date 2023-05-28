@@ -16,4 +16,26 @@
 
 .close {
     margin-bottom: 3.25rem;
+    color: var(--color-grayish-blue);
+}
+
+.close svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+@media (min-width: 64em) { /* 1024px */
+    .hambur {
+        display: none;
+    }
+
+    .nav {
+        position: unset;
+        flex: 2;
+        padding: 1rem 2.5rem 0;
+    }
+    
+    .close {
+        display: none;
+    }
 }

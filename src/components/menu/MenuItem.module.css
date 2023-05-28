@@ -4,3 +4,21 @@
     font-size: 1.125rem;
     color: var(--color-very-dark-blue);
 }
+
+
+@media (min-width: 64em) { /* 1024px */
+    
+    .link {
+        font-weight: 400;
+        font-size: 1rem;
+        color: var(--color-dark-grayish-blue);
+        padding-bottom: 2.85rem;
+        display: block;
+        border-bottom: 2px solid transparent;
+    }
+
+    .link:hover {
+        border-bottom-color: var(--color-orange);
+        color: var(--color-very-dark-blue);
+    }
+}

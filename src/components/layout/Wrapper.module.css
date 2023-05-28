@@ -1,0 +1,8 @@
+
+@media (min-width: 71em) { /* 1136px */
+    .container {
+        max-width: 71em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

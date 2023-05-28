@@ -7,6 +7,9 @@
     --color-light-grayish-blue: hsl(223, 64%, 98%);
     --color-orange: hsl(26, 100%, 55%);
     --color-pale-orange: hsl(25, 100%, 94%);
+    --color-pale-orange-2: hsla(25, 100%, 94%, 0.2);
+    --color-box-shadow:rgba(255,125,26,0.75);
+    --color-bg-hover:rgba(255,125,26,0.6);
 
     --font: 'Kumbh Sans', sans-serif;
 }

@@ -23,27 +23,32 @@ const Header = () => {
 
     return <header className={styles.header}>
         <Wrapper>
-            <Logo />
-            <Menu />
-            <div className={styles.cart}>
-                <div className={styles["cart-icon"]} onClick={toggleCart}>
-                    <CartIcon aria-hidden={true} focusable={false} />
-
-                    {
-                        cartCtx.count > 0 && <div className={styles["cart-badge"]}>
-                            {cartCtx.count}
-                        </div>
-                    }
-
+            <div className={styles.top}>
+                <div className={styles.logo}>
+                    <Logo />
                 </div>
+                <Menu />
+                <div className={styles.cart}>
+                    <div className={styles["cart-icon"]} onClick={toggleCart}>
+                        <CartIcon aria-hidden={true} focusable={false} />
 
-                <AnimatePresence>
-                    {
-                        cartIsOpen && <Cart />
-                    }
-                </AnimatePresence>
+                        {
+                            cartCtx.count > 0 && <div className={styles["cart-badge"]}>
+                                {cartCtx.count}
+                            </div>
+                        }
+
+                    </div>
+
+                    <AnimatePresence>
+                        {
+                            cartIsOpen && <Cart />
+                        }
+                    </AnimatePresence>
+                </div>
+                <img alt="avatar" src={Avatar} className={styles.avatar} />
             </div>
-            <img alt="avatar" src={Avatar} className={styles.avatar} />
+            <div className={styles.bottom}></div>
         </Wrapper>
 
     </header>

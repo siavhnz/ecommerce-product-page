@@ -1,5 +1,4 @@
 
-
 .number {
     display: flex;
     align-items: center;
@@ -12,9 +11,23 @@
     padding: 1rem 1.5rem;
 }
 
-.number  input {
+.number button {
+    color: var(--color-orange)
+}
+
+.number button:hover {
+    color: var(--color-bg-hover);
+}
+
+.number input {
     background-color: var(--color-light-grayish-blue);
     text-align: center;
     outline: none;
     width: 4rem;
+}
+
+@media (min-width: 64em) { /* 1024px */
+    .number {
+        padding: 1rem 1.125rem;
+    }
 }

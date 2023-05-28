@@ -5,7 +5,12 @@
     align-items: center;
     justify-content: center;
     background-color: var(--color-orange);
-    color: var(--color-white);
+    color: var(--color-light-grayish-blue);
     border-radius: 0.5rem;
     width: 100%;
+    box-shadow: 0px 5px 15px -5px var(--color-box-shadow);
+}
+
+.button:hover {
+    background-color: var(--color-bg-hover);
 }

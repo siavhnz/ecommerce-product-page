@@ -1,0 +1,51 @@
+
+.thumbnails {
+    overflow: hidden;
+    padding-top: 1.85rem;
+    display: none;
+    position: relative;
+}
+
+.inner-thumbnail {
+    display: flex;
+    column-gap: 1.75rem;
+    outline: none;
+}
+
+
+.inner-thumbnail img {
+    pointer-events: none;
+    border-radius: 0.75rem;
+}
+
+.img-container {
+    width: 5.625rem;
+    flex-shrink: 0;
+    border-radius: 0.85rem;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.img-container.active {
+    border: 2px solid var(--color-orange);
+    
+}
+
+.img-container:hover{
+    opacity: 0.5;
+}
+
+.img-container img:hover,
+.img-container img.active {
+    mix-blend-mode: color;
+    
+}
+
+
+
+
+@media (min-width: 30em) { /* 480px */
+    .thumbnails {
+        display: block;
+    }
+}

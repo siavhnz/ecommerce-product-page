@@ -57,7 +57,8 @@ Users should be able to:
   - ProductLightBox
 - Create components
 - Work on:
-  - Mobile design based on `design` folder [375px]
+  - Mobile design based on `design` folder (375px)
+  - bigger reselotion based on `design` folder (>375px)
 
 ### Built with
 

@@ -1,0 +1,11 @@
+.slider {
+    position: relative;
+}
+
+.inner-slider {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    overflow: hidden;
+    max-width: 34.375em; /* 550px */
+}

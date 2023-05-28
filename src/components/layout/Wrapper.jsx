@@ -1,8 +1,12 @@
 
-const Wrapper = ({ children }) => {
+import styles from "./Wrapper.module.css";
 
-    return <div>
-        { children }
+const Wrapper = ({ children, cssClass }) => {
+
+    const divClass = cssClass ? `${styles.container} ${cssClass}` : styles.container
+
+    return <div className={divClass}>
+        {children}
     </div>
 }
 

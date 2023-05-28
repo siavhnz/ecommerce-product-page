@@ -1,4 +1,8 @@
-import SelectiveSlider from "../slider/SelectiveSlider";
+import SelectiveSlider from "../slider";
+import SlideContainer from "../slider/SlideContainer";
+import Thumbnails from "../slider/Thumbnails";
+import SliderContextProvider from "../slider/store/slider-context";
+import SlideItem from "./SlideItem";
 import styles from "./Slider.module.css";
 
 
@@ -16,8 +20,15 @@ const ProductSlider = ({ product }) => {
     })
 
     return <div className={styles["slider-container"]}>
-            <SelectiveSlider thumbnails={thumbnails} images={images} hasControl={true} />
-        </div>
+        <SliderContextProvider slides={images}>
+            <SelectiveSlider controlsStyles={styles.controls}>
+                <SlideContainer>
+                    <SlideItem />
+                </SlideContainer>
+                <Thumbnails thumbnails={thumbnails} />
+            </SelectiveSlider>
+        </SliderContextProvider>
+    </div>
 }
 
 export default ProductSlider;

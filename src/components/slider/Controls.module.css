@@ -1,0 +1,27 @@
+
+.controls button{
+  top: calc(50% - 1.25rem);
+  position: absolute;
+  background: white;
+  border-radius: 100%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.controls button:first-of-type {
+  right: 0.85rem;
+}
+
+.controls button:nth-of-type(2) {
+  left: 0.85rem;
+}
+
+.controls button svg {
+    width: 0.75rem;
+    height: 0.75rem;
+}
