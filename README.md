@@ -31,13 +31,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![screenshot](./screenshot/screenshot.png)
 
 ### Links
 
 - Solution: [frontendmentor.io](https://www.frontendmentor.io/solutions/?)
 
-- Live Site: [cloudflare](https://?.pages.dev/)
+- Live Site: [cloudflare](https://ecommerce-product-page-dxk.pages.dev/)
 
 ## My process
 
@@ -62,11 +62,26 @@ Users should be able to:
 
 ### Built with
 
+- React
+- Framer Motion
+- CSS Module
+- Mobile first workflow
+
 ### What I learned
+
+Reusability thought in react is the crucial part of react, Knowing how to play with that is more crucial.
 
 ### Continued development
 
+more on React and Framer motion
+
 ### Useful resources
+
+- [Framer Motion Image Gallery](https://codesandbox.io/s/framer-motion-image-gallery-pqvx3)
+
+- [React Easy Slider with Framer Motion Tutorial](https://www.youtube.com/watch?v=W0bEL93tt4k)
+
+- [Animate Menu](https://www.framer.com/motion/examples/#variants)
 
 ## Author
 
