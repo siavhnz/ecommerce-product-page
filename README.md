@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution: [frontendmentor.io](https://www.frontendmentor.io/solutions/?)
+- Solution: [frontendmentor.io](https://www.frontendmentor.io/solutions/ecommerce-product-page-CSf8kgfCAY)
 
 - Live Site: [cloudflare](https://ecommerce-product-page-dxk.pages.dev/)
 
